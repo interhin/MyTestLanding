@@ -1,0 +1,39 @@
+.justify-self-end {
+    margin-left:auto;
+}
+
+.justify-self-start {
+    margin-right: auto;
+}
+
+
+.hText {
+    @include headText(48px, $darkHeadText, "bigNodeTitling", $lightOrange, 90%, 0);
+}
+
+.darkHText {
+    @include headText(36px, #f6f6f6, "Roboto Condensed", #404040, 30%, 10px);
+}
+
+.purchaseBut, .playNowBut, .sendMessBut {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#fff;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    padding: 12px 22px;
+    background-color: $lightOrange;
+    border-radius: 5px;
+    letter-spacing: 2px;
+}
+
+.playNowBut {
+    border-bottom: 2px solid #b51809;
+    border-radius: 0;
+}
+
+.sendMessBut {
+    border-radius: 0;
+}

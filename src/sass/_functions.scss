@@ -1,0 +1,25 @@
+%smallHeadText {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $darkHeadText;
+}
+
+@mixin headText($font-size, $font-color, $font-family, $line-color, $line-width, $line-top) {
+    font-family: $font-family;
+    letter-spacing: 8px;
+    font-size: $font-size;
+    text-transform: uppercase;
+    color: $font-color;
+    width: max-content;
+    display: block;
+    margin: 0 auto;
+    &::after {
+        content: '';
+        display: block;
+        width: $line-width;
+        height: 2px;
+        background-color: $line-color;
+        margin: $line-top auto;
+    }
+}
