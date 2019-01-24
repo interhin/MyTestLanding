@@ -121,7 +121,7 @@ gulp.task('build',gulp.series('clean','img','sass','scripts',function(cb){ // Ф
                        .pipe(gulp.dest(paths.buildFonts.src));
 
     var buildFontAwesome = gulp.src(paths.src+'/libs/font-awesome/webfonts/*')
-                       .pipe(gulp.dest(paths.src+'/fonts/webfonts/'));
+                       .pipe(gulp.dest(paths.buildSrc+'/webfonts/'));
 
     var buildJs = gulp.src(paths.js.src)
                        .pipe(gulp.dest(paths.buildJs.src));
