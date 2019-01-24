@@ -120,14 +120,24 @@ gulp.task('build',gulp.series('clean','img','sass','scripts',function(cb){ // Ф
     var buildFonts = gulp.src(paths.src+'/fonts/**/*')
                        .pipe(gulp.dest(paths.buildFonts.src));
 
+    var buildFontAwesome = gulp.src(paths.src+'/libs/font-awesome/webfonts/*')
+                       .pipe(gulp.dest(paths.src+'/fonts/webfonts/'));
+
     var buildJs = gulp.src(paths.js.src)
                        .pipe(gulp.dest(paths.buildJs.src));
 
     var buildHtml = gulp.src(paths.src+'/*.html')
                        .pipe(gulp.dest(paths.buildSrc));
+
     cb();
 }));
 
-gulp.task('default',gulp.series('css-libs','sass','scripts','watch'));
+
+gulp.task('fontawesome',function(){
+    return gulp.src(paths.src+'/libs/font-awesome/webfonts/*')
+        .pipe(gulp.dest(paths.src+'/webfonts/'));
+});
+
+gulp.task('default',gulp.series('fontawesome','css-libs','sass','scripts','watch'));
 
 
